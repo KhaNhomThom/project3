@@ -3,7 +3,14 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'HomeController@index');
+Auth::routes();
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+});
+
+    Route::get('/', 'HomeController@index');
 // USER
 Route::get('/user', 'UserController@index');
 Route::get('/user/show/{id}', 'UserController@show');
@@ -31,4 +38,7 @@ Route::get('/category/delete/{id}', 'CategoryController@delete');
 
 Auth::routes();
 
-
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+});
