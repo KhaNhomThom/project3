@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
-        //ข้างในนี้ไม่มีอะไร
+        $categories = User::all();
+        return $categories;
+    }
+    public function show($id){
+        $categories = User::find($id);
+        return $categories;
     }
     public function create(){
         //ข้างในนี้ไม่มีอะไร

@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        //ข้างในนี้ไม่มีอะไร
+        $categories = Post::all();
+        return $categories;
+    }
+    public function show($id){
+        $categories = Post::find($id);
+        return $categories;
     }
     public function create(){
         //ข้างในนี้ไม่มีอะไร

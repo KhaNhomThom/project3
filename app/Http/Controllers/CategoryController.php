@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public function index()
     {
-        //ข้างในนี้ไม่มีอะไร
+        $categories = Category::all();
+        return $categories;
+    }
+    public function show($id){
+        $categories = Category::find($id);
+        return $categories;
     }
     public function create(){
         //ข้างในนี้ไม่มีอะไร
