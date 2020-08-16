@@ -10,7 +10,7 @@ class HomeController extends Controller
     {
         $data = [
             "name" => "Kittipop Duangjai",
-            "age" => 30,
+            "age" => 20,
         ];
         return view("welcome", $data);
     }
